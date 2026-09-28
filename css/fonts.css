@@ -1,0 +1,94 @@
+/* ===================================================================
+ * fonts.css
+ *
+ * Inter for body/UI text, Figtree for display headings.
+ * Both are self-hosted variable fonts, so no external requests.
+ * ------------------------------------------------------------------- */
+
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/inter/inter-variable.woff2") format("woff2-variations"),
+         url("../fonts/inter/inter-variable.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Figtree";
+    src: url("../fonts/figtree/figtree-variable.woff2") format("woff2-variations"),
+         url("../fonts/figtree/figtree-variable.woff2") format("woff2");
+    font-weight: 300 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/*
+ * Legacy theme aliases
+ * The Hola theme names its faces by weight (montserrat-bold, etc.) and sets
+ * font-weight: normal everywhere, so each alias carries its own weight.
+================================================================================ */
+
+@font-face {
+    font-family: "montserrat-thin";
+    src: url("../fonts/inter/inter-variable.woff2") format("woff2");
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "montserrat-extralight";
+    src: url("../fonts/inter/inter-variable.woff2") format("woff2");
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "montserrat-light";
+    src: url("../fonts/inter/inter-variable.woff2") format("woff2");
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "montserrat-regular";
+    src: url("../fonts/inter/inter-variable.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "montserrat-medium";
+    src: url("../fonts/inter/inter-variable.woff2") format("woff2");
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "montserrat-semibold";
+    src: url("../fonts/inter/inter-variable.woff2") format("woff2");
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "montserrat-bold";
+    src: url("../fonts/inter/inter-variable.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "montserrat-extrabold";
+    src: url("../fonts/inter/inter-variable.woff2") format("woff2");
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "montserrat-black";
+    src: url("../fonts/inter/inter-variable.woff2") format("woff2");
+    font-weight: 800;
+    font-display: swap;
+}

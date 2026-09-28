@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en" data-theme="dark">
+<!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Portfolio - Lenovo Qira, Pay Attention</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme");
+            document.documentElement.setAttribute(
+                "data-theme",
+                theme === "light" ? "light" : "dark"
+            );
+        })();
+    </script>
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/site.css">
+
+    <!-- script
+
+
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+    <style>
+            /* ── Inline overrides – scoped so they don't break the base theme ── */
+
+        /* Font override for case study body */
+        .blog-content,
+        .blog-content p,
+        .blog-content li,
+        .blog-content h3,
+        .blog-content h4 {
+            font-family: 'DM Sans', sans-serif;
+        }
+        .blog-content h2,
+        .blog-content .cs-display {
+            font-family: 'DM Serif Display', Georgia, serif;
+        }
+
+        /* ── Meta strip ── */
+        .cs-meta-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            border: 1px solid #e2e0d8;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 3.6rem;
+        }
+        .cs-meta-item {
+            flex: 1 1 160px;
+            padding: 1.4rem 1.8rem;
+            border-right: 1px solid #e2e0d8;
+        }
+        .cs-meta-item:last-child { border-right: none; }
+        .cs-meta-label {
+            display: block;
+            font-size: 1.0rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: #999;
+            margin-bottom: .4rem;
+        }
+        .cs-meta-value {
+            display: block;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #222;
+        }
+
+        /* ── Section label (small eyebrow) ── */
+        .cs-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: #E5362B;
+            margin-bottom: 1rem;
+        }
+        .cs-eyebrow::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #E5362B;
+            border-radius: 2px;
+        }
+
+        /* ── Stats row ── */
+        .cs-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 3.2rem;
+        }
+        .cs-stat {
+            background: #f8f7f4;
+            border-radius: 6px;
+            padding: 1.6rem 1.4rem;
+        }
+        .cs-stat-num {
+            display: block;
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 3.2rem;
+            color: #E5362B;
+            line-height: 1;
+            margin-bottom: .5rem;
+        }
+        .cs-stat-desc {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.55;
+        }
+
+        /* ── Highlight / callout box ── */
+        .cs-callout {
+            border-left: 3px solid #E5362B;
+            background: #fdf1f0;
+            padding: 1.6rem 2rem;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 3.2rem;
+        }
+        .cs-callout p {
+            margin-bottom: 0;
+            font-size: 1.5rem;
+            color: #222;
+            line-height: 1.7;
+        }
+        .cs-callout strong { color: #E5362B; }
+
+        /* ── Persona cards ── */
+        .cs-persona-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.6rem;
+            margin-bottom: 3.6rem;
+        }
+        .cs-persona-card {
+            border: 1px solid #e2e0d8;
+            border-radius: 8px;
+            padding: 2rem;
+            background: #fff;
+        }
+        .cs-persona-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.7rem;
+            color: #fff;
+            margin-bottom: 1.2rem;
+        }
+        .cs-persona-card h4 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: .3rem;
+            color: #222;
+        }
+        .cs-persona-card .cs-persona-role {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 1.4rem;
+        }
+        .cs-persona-card ul {
+            margin-bottom: 0;
+            padding-left: 0;
+            list-style: none;
+        }
+        .cs-persona-card ul li {
+            font-size: 1.3rem;
+            color: #555;
+            padding: .45rem 0;
+            border-bottom: 1px solid #f0eeea;
+            padding-left: 1.2rem;
+            position: relative;
+            line-height: 1.5;
+        }
+        .cs-persona-card ul li:last-child { border-bottom: none; }
+        .cs-persona-card ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 1.1rem;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #E5362B;
+        }
+        .cs-persona-section-label {
+            font-size: 1.0rem;
+            text-transform: uppercase;
+            letter-spacing: .07em;
+            color: #aaa;
+            margin-bottom: .6rem;
+            display: block;
+        }
+
+        /* ── Journey map table ── */
+        .cs-journey-wrap {
+            overflow-x: auto;
+            margin-bottom: 3.6rem;
+            border: 1px solid #e2e0d8;
+            border-radius: 8px;
+        }
+        .cs-journey {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.3rem;
+            min-width: 640px;
+        }
+        .cs-journey thead th {
+            padding: 1.2rem 1.6rem;
+            text-align: left;
+            font-size: 1.0rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: .07em;
+            color: #999;
+            background: #f8f7f4;
+            border-bottom: 1px solid #e2e0d8;
+        }
+        .cs-journey tbody td {
+            padding: 1.2rem 1.6rem;
+            vertical-align: top;
+            border-bottom: 1px solid #f0eeea;
+            color: #555;
+            line-height: 1.55;
+        }
+        .cs-journey tbody tr:last-child td { border-bottom: none; }
+        .cs-journey .j-phase { font-weight: 500; color: #222; white-space: nowrap; }
+        .cs-emotion {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .e-neg { background: #fef2f2; color: #991b1b; }
+        .e-mid { background: #fff8ec; color: #92400e; }
+        .e-pos { background: #ecfdf5; color: #065f46; }
+
+        /* ── Decision cards (design decisions) ── */
+        .cs-decision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 3.2rem;
+        }
+        .cs-decision-card {
+            border: 1px solid #e2e0d8;
+            border-radius: 8px;
+            padding: 1.6rem;
+            background: #fff;
+        }
+        .cs-decision-badge {
+            display: inline-block;
+            font-size: 1.0rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: .8rem;
+            font-weight: 500;
+        }
+        .db-chosen { background: #ecfdf5; color: #065f46; }
+        .db-rejected { background: #fef2f2; color: #991b1b; }
+        .cs-decision-card h4 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #222;
+            margin-bottom: .5rem;
+        }
+        .cs-decision-card p {
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* ── Findings list ── */
+        .cs-findings {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 3.2rem;
+        }
+        .cs-finding-item {
+            display: flex;
+            gap: 1.8rem;
+            align-items: flex-start;
+            border: 1px solid #e2e0d8;
+            border-radius: 8px;
+            padding: 1.8rem;
+            margin-bottom: 1.2rem;
+            background: #fff;
+        }
+        .cs-finding-left {
+            min-width: 100px;
+            max-width: 100px;
+        }
+        .cs-severity {
+            display: inline-block;
+            font-size: 1.0rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-bottom: .6rem;
+            font-weight: 500;
+        }
+        .sev-high { background: #fef2f2; color: #991b1b; }
+        .sev-mid  { background: #fff8ec; color: #92400e; }
+        .sev-low  { background: #ecfdf5; color: #065f46; }
+        .cs-finding-label {
+            font-size: 1.2rem;
+            color: #888;
+            line-height: 1.45;
+        }
+        .cs-finding-desc {
+            font-size: 1.4rem;
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* ── Outcome metrics ── */
+        .cs-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 3.6rem;
+        }
+        .cs-metric {
+            background: #f8f7f4;
+            border-radius: 6px;
+            padding: 1.6rem 1.4rem;
+            text-align: center;
+        }
+        .cs-metric-num {
+            display: block;
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 2.8rem;
+            color: #E5362B;
+            line-height: 1;
+            margin-bottom: .5rem;
+        }
+        .cs-metric-desc {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* ── Reflection box ── */
+        .cs-reflection {
+            background: #f8f7f4;
+            border-radius: 8px;
+            padding: 2.8rem 3rem;
+            margin-bottom: 3.6rem;
+        }
+        .cs-reflection h3 {
+            font-family: 'DM Serif Display', Georgia, serif !important;
+            font-size: 2.2rem !important;
+            color: #222;
+            margin-bottom: 1.2rem;
+        }
+        .cs-reflection p {
+            font-size: 1.4rem;
+            color: #555;
+            line-height: 1.75;
+            margin-bottom: 1.2rem;
+        }
+        .cs-reflection p:last-child { margin-bottom: 0; }
+
+        /* ── Wireframe mockup inline ── */
+        .cs-mockup-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.6rem;
+            margin-bottom: 3.2rem;
+        }
+        .cs-mockup-frame {
+            border: 1px solid #e2e0d8;
+            border-radius: 20px;
+            padding: 10px 8px 14px;
+            background: #f2f1ec;
+        }
+        .cs-mockup-notch {
+            width: 50px;
+            height: 12px;
+            background: #fff;
+            border: 1px solid #e2e0d8;
+            border-radius: 8px;
+            margin: 0 auto 8px;
+        }
+        .cs-mockup-screen {
+            background: #fff;
+            border-radius: 14px;
+            border: 1px solid #e2e0d8;
+            padding: 10px;
+            min-height: 280px;
+        }
+        .cm-status { font-size: 9px; color: #aaa; text-align: right; margin-bottom: 6px; }
+        .cm-title  { font-size: 11px; font-weight: 600; text-align: center; margin-bottom: 10px; color: #222; }
+        .cm-rec-pill {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            justify-content: center;
+            background: #fdf1f0;
+            border-radius: 20px;
+            padding: 4px 12px;
+            margin-bottom: 10px;
+        }
+        .cm-rec-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #E5362B;
+            animation: blink 1.2s ease-in-out infinite;
+        }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
+        .cm-rec-text { font-size: 9px; color: #E5362B; font-weight: 600; }
+        .cm-block {
+            background: #f8f7f4;
+            border-radius: 8px;
+            padding: 8px;
+            margin-bottom: 8px;
+        }
+        .cm-block-label { font-size: 8px; text-transform: uppercase; letter-spacing: .06em; color: #aaa; margin-bottom: 4px; }
+        .cm-line { font-size: 10px; color: #555; line-height: 1.5; margin-bottom: 3px; }
+        .cm-line.hi { color: #222; font-weight: 600; }
+        .cm-tag {
+            display: inline-block;
+            font-size: 8px;
+            background: #fdf1f0;
+            color: #E5362B;
+            padding: 1px 6px;
+            border-radius: 8px;
+        }
+        .cm-tag-blue {
+            display: inline-block;
+            font-size: 8px;
+            background: #eff6ff;
+            color: #1d4ed8;
+            padding: 1px 6px;
+            border-radius: 8px;
+        }
+        .cm-btn-row {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+            margin-top: 6px;
+        }
+        .cm-btn {
+            font-size: 9px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            border: 1px solid #e2e0d8;
+            background: #fff;
+            color: #555;
+            cursor: pointer;
+        }
+        .cm-btn.primary { background: #fdf1f0; color: #E5362B; border-color: #f5c6c2; font-weight: 600; }
+        .cm-caption {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #999;
+            margin-top: .8rem;
+            font-style: italic;
+        }
+
+        /* Divider */
+        .cs-divider {
+            border: none;
+            border-top: 1px solid #e8e6df;
+            margin: 3.6rem 0;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 600px) {
+            .cs-meta-item { flex: 1 1 100%; border-right: none; border-bottom: 1px solid #e2e0d8; }
+            .cs-meta-item:last-child { border-bottom: none; }
+            .cs-finding-item { flex-direction: column; gap: .8rem; }
+            .cs-finding-left { min-width: auto; max-width: none; }
+        }
+
+        </style>
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+
+<body id="top">
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+            
+        <div class="header-logo">
+            <a class="site-logo" href="index.html"><img src="images/jyl-logo-2x.png" alt="Homepage"></a>
+        </div>
+
+        <nav class="header-nav-wrap">
+            <ul class="header-nav">
+                <li><a href="index.html#home" title="home">Home</a></li>
+                <li><a href="index.html#about" title="about">About</a></li>
+                <li class="current"><a href="index.html#case"  title="case">Case Study</a></li>
+                <li><a href="index.html#works" title="works">Works</a></li>
+                <li><a href="index.html#contact" title="contact">Contact</a></li>	
+            </ul>
+        </nav>
+        <button
+            type="button"
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-pressed="true"
+            aria-label="Switch to light mode"
+            title="Light mode">
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8" />
+                <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    d="M12 3v2.2M12 18.8V21M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M3 12h2.2M18.8 12H21M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6" />
+            </svg>
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"
+                    d="M19.2 14.3A7.4 7.4 0 0 1 9.7 4.8 7.6 7.6 0 1 0 19.2 14.3z" />
+            </svg>
+        </button>
+        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+
+    </header> <!-- end s-header -->
+
+
+    <article class="blog-single">
+
+        <!-- page header/blog hero
+        ================================================== -->
+        <div class="page-header page-header--single page-hero" style="background-image:url(images/casestudy-bg.jpg)">
+        
+            <div class="row page-header__content narrow">
+                <article class="col-full">
+                    <!-- <div class="page-header__info">
+                        <div class="page-header__cat">
+                            <a href="#0">Branding</a><a href="#0">Design</a>
+                        </div>
+                    </div> -->
+                    <h1 class="page-header__title">
+                        <a href="#0" title="">
+                            Case Study<br>Lenovo Qira, Pay Attention
+                        </a>
+                    </h1>
+                    
+                    
+                </article>
+            </div>
+    
+        </div> <!-- end page-header -->
+
+        <div class="row blog-content">
+            <div class="col-full blog-content__main">
+<h3>Introduction</h3>
+                <p class="lead">Pay Attention is a core feature inside Lenovo Qira — the personal ambient AI that launched at CES 2026. It enables real-time transcription, translation, and AI-generated meeting summaries so that users stay fully present in conversations, without the cognitive overhead of note-taking or the frustration of language barriers.</p>
+                <h3>Company</h3>
+                <p>Lenovo - AI Ecosystems Group</p>
+                <h3>Project Date</h3>
+                <p>September 2025 – January 2026</p>
+                <h3>Role</h3>
+                <p>Lead UX Designer</p>
+                <h3>Platform</h3>
+                <p>Windows, Android - Cross Device</p>
+                <h3>Project Summary</h3>
+                <p>Lenovo Qira is a system-level personal AI that spans Lenovo PCs, tablets, and Motorola smartphones. Rather than living inside a single app, Qira is embedded directly into the OS — accessible via a dedicated key, the wake word "Hey Qira," or a persistent interface element. Pay Attention is one of Qira's flagship experiences: when enabled, it listens to meetings and conversations, captures live transcriptions and translations, flags key decisions and action items, and generates summaries users can revisit, edit, and share.
+
+The product had a clear predecessor problem: Lenovo AI Now captured meeting audio in a way that felt opaque and privacy-invasive to testers, and the output was a raw wall of text with no structure. The opportunity was to redesign this from first principles — making AI-assisted meeting capture feel genuinely useful, trustworthy, and ambient.</p>
+                <h3>The Challenge</h3>
+                <p>Several research workshops and a cross-functional kick-off surfaced the core problem space. Users needed a meeting tool that could capture what mattered — without requiring them to manage it. The key problems to solve:</p>
+                <ul>
+<li>How do we make AI meeting capture feel safe to turn on — especially in professional and multi-participant settings?</li>
+<li>How do we surface decisions and action items from a raw transcript without false positives?</li>
+<li>How do we support non-native English speakers who need translation in-context, without disrupting meeting flow?</li>
+<li>How do we design a recall experience that is faster and more trustworthy than human memory?</li>
+<li>How do we integrate this into the OS-level Qira experience rather than building another siloed meeting app?</li>
+
+                </ul>
+                
+                
+
+                <div class="row half-bottom">
+                    <div class="col-six tab-full">
+                <p>
+                <img src="images/case-study-workshop-004-500w.jpg" srcset="images/case-study-workshop-004-1000w.jpg 1000w, 
+                    images/case-study-workshop-004-500w.jpg 500w" sizes="(max-width: 500px) 100vw, 500px" alt=""></p></div>
+                <div class="col-six tab-full">
+                    <p><img src="images/case-study-workshop-003-500w.jpg" srcset="images/case-study-workshop-003-1000w.jpg 1000w, 
+                    images/case-study-workshop-003-500w.jpg 500w" sizes="(max-width: 500px) 100vw, 500px" alt=""></p></div>
+                </div>
+                <h3>Research and Discovery</h3>
+                <p>Three primary research methods were used to build a foundation of user insight before any design work began.</p>
+
+<ul><li>Contextual inquiry (n=8): observed participants in live hybrid and remote meetings, documenting moments of distraction, language confusion, and note-taking interruptions.</li>
+<li>Diary study (n=14, 2 weeks): participants logged every moment they wished they had a better record of a conversation. Entries were coded into four themes: missed decision, language barrier, distraction, and loss of context over time.</li>
+<li>Competitive audit: reviewed Otter.ai, Notion, Microsoft Copilot transcription, Google Meet captions, and Zoom AI Companion — assessing transcript accuracy, privacy model, recall UX, and integration depth.</li></ul>
+                    
+                </ul>
+
+                <div class="cs-stats">
+                    <div class="cs-stat">
+                        <span class="cs-stat-num">67%</span>
+                        <span class="cs-stat-desc">of professionals leave meetings without clear next steps (Deloitte Workplace Survey, 2025)</span>
+                    </div>
+                    <div class="cs-stat">
+                        <span class="cs-stat-num">2.3×</span>
+                        <span class="cs-stat-desc">more likely to miss a key decision when participating in a second language (user interviews, n=22)</span>
+                    </div>
+                    <div class="cs-stat">
+                        <span class="cs-stat-num">41 min</span>
+                        <span class="cs-stat-desc">average time lost per week chasing colleagues for meeting recap (internal diary study)</span>
+                    </div>
+                    <div class="cs-stat">
+                        <span class="cs-stat-num">3 in 5</span>
+                        <span class="cs-stat-desc">users had previously disabled an AI recording feature due to privacy concerns about always-on listening</span>
+                    </div>
+                </div>
+
+                <div class="cs-callout">
+                    <p><strong>Core insight:</strong> Users don't want an AI that records everything — they want one that captures the <em>right things</em> with explicit consent, and surfaces them in context when it matters. The difference between surveillance and support is control.</p>
+                </div>
+
+                <!-- ─── PERSONAS ───────────────────────────────────────────── -->
+                <h3>User Personas</h3>
+                <p>Three primary personas emerged from the research, each representing a distinct relationship with meetings, language, and AI trust.</p>
+
+                <div class="cs-persona-grid">
+
+                    <div class="cs-persona-card">
+                        <div class="cs-persona-avatar" style="background:#E5362B;">MR</div>
+                        <h4>Maya Rodriguez, 34</h4>
+                        <p class="cs-persona-role">Engineering Lead &middot; Austin, TX &middot; Native English speaker<br>ThinkPad X1 + Motorola Edge+</p>
+                        <span class="cs-persona-section-label">Goals</span>
+                        <ul>
+                            <li>Stay present in standups without frantic note-taking</li>
+                            <li>Quickly retrieve what was decided in last week's sync</li>
+                            <li>Share accurate summaries without effort</li>
+                        </ul>
+                        <span class="cs-persona-section-label" style="margin-top:1.2rem;display:block;">Frustrations</span>
+                        <ul>
+                            <li>Misremembers action items when context switches fast</li>
+                            <li>Doesn't trust AI summaries she can't verify</li>
+                            <li>Worried about recording colleagues without consent</li>
+                        </ul>
+                    </div>
+
+                    <div class="cs-persona-card">
+                        <div class="cs-persona-avatar" style="background:#534AB7;">KT</div>
+                        <h4>Kenji Tanaka, 42</h4>
+                        <p class="cs-persona-role">Senior Product Manager &middot; Tokyo → Berlin &middot; Japanese / German<br>Lenovo Yoga + Motorola Razr</p>
+                        <span class="cs-persona-section-label">Goals</span>
+                        <ul>
+                            <li>Follow fast English meetings without losing nuance</li>
+                            <li>Confirm translation of jargon in real time</li>
+                            <li>Review bilingual transcript after meetings</li>
+                        </ul>
+                        <span class="cs-persona-section-label" style="margin-top:1.2rem;display:block;">Frustrations</span>
+                        <ul>
+                            <li>Switching to Google Translate breaks meeting flow entirely</li>
+                            <li>Misses idioms that don't translate literally</li>
+                            <li>Fears appearing slow — needs subtlety</li>
+                        </ul>
+                    </div>
+
+                    <div class="cs-persona-card">
+                        <div class="cs-persona-avatar" style="background:#0F6E56;">PK</div>
+                        <h4>Priya Kapoor, 28</h4>
+                        <p class="cs-persona-role">UX Researcher &middot; Bangalore → Remote &middot; Hindi / English<br>IdeaPad Pro 5i + Moto G</p>
+                        <span class="cs-persona-section-label">Goals</span>
+                        <ul>
+                            <li>Run user interviews and capture key quotes automatically</li>
+                            <li>Search transcript for specific participant responses</li>
+                            <li>Export clean summaries to Notion workspace</li>
+                        </ul>
+                        <span class="cs-persona-section-label" style="margin-top:1.2rem;display:block;">Frustrations</span>
+                        <ul>
+                            <li>Existing tools need too much setup before each session</li>
+                            <li>Exports are messy and require heavy manual editing</li>
+                            <li>Privacy consent flow is unclear in current apps</li>
+                        </ul>
+                    </div>
+
+
+                
+                <!-- ─── JOURNEY MAP ────────────────────────────────────────── -->
+                <h3>User Journey Map</h3>
+                <p>The journey map below traces the primary persona (Maya) through a full meeting cycle — from the moment she opens her laptop to the next day when she needs to recall a decision.</p>
+
+                <div class="cs-journey-wrap">
+             <p>       <table class="cs-journey">
+                                     <thead>
+                                         <tr>
+                                             <th>Phase</th>
+                                             <th>Action</th>
+                                             <th>Thought</th>
+                                             <th>Emotion</th>
+                                             <th>Opportunity</th>
+                                         </tr>
+                                     </thead>
+                                     <tbody>
+                                         <tr>
+                                             <td class="j-phase">Pre-meeting</td>
+                                             <td>Joins Zoom, opens laptop</td>
+                                             <td>"Do I need to take notes again today?"</td>
+                                             <td><span class="cs-emotion e-mid">Neutral</span></td>
+                                             <td>One-tap activation from OS level — no separate app</td>
+                                         </tr>
+                                         <tr>
+                                             <td class="j-phase">Activation</td>
+                                             <td>Enables Pay Attention via Qira key</td>
+                                             <td>"I hope this doesn't make others uncomfortable"</td>
+                                             <td><span class="cs-emotion e-mid">Anxious</span></td>
+                                             <td>Visible consent notification sent to all participants automatically</td>
+                                         </tr>
+                                         <tr>
+                                             <td class="j-phase">Mid-meeting</td>
+                                             <td>Glances at live transcript strip</td>
+                                             <td>"It's catching everything, even the off-topic tangent"</td>
+                                             <td><span class="cs-emotion e-pos">Focused</span></td>
+                                             <td>Key-moment detection + smart highlight layer in transcript</td>
+                                         </tr>
+                                         <tr>
+                                             <td class="j-phase">Decision point</td>
+                                             <td>Hears "let's go with Option B"</td>
+                                             <td>"Was that a real decision or just a suggestion?"</td>
+                                             <td><span class="cs-emotion e-neg">Uncertain</span></td>
+                                             <td>AI-flagged decision markers with speaker attribution in transcript</td>
+                                         </tr>
+                                         <tr>
+                                             <td class="j-phase">Post-meeting</td>
+                                             <td>Reviews AI summary and action items</td>
+                                             <td>"This is actually accurate. I can trust this."</td>
+                                             <td><span class="cs-emotion e-pos">Relieved</span></td>
+                                             <td>Editable summary with inline supporting transcript excerpt</td>
+                                         </tr>
+                                         <tr>
+                                             <td class="j-phase">Next day</td>
+                                             <td>Searches "Option B" across past meetings</td>
+                                             <td>"I found the exact moment it was decided."</td>
+                                             <td><span class="cs-emotion e-pos">Confident</span></td>
+                                             <td>Cross-meeting semantic search with Notion sync integration</td>
+                                         </tr>
+                                     </tbody>
+                                 </table></p>
+                </div>
+
+                <!-- ─── THE SOLUTION ──────────────────────────────────────── -->
+                <h3>The Solution</h3>
+                <p>Working alongside the product owner, engineering lead, and Qira's design system team, I designed and iterated the Pay Attention experience across three parallel streams: the live transcript layer, the post-meeting summary flow, and the real-time translation mode. Key design decisions and their rationale:</p>
+
+                <div class="cs-decision-grid">
+                    <div class="cs-decision-card">
+                        <span class="cs-decision-badge db-chosen">Chosen</span>
+                        <h4>Persistent transcript strip</h4>
+                        <p>A thin live-text bar at the screen edge — visible but non-intrusive. Users can expand to full view on demand. Keeps eyes on the meeting, not a modal.</p>
+                    </div>
+                    <div class="cs-decision-card">
+                        <span class="cs-decision-badge db-rejected">Rejected</span>
+                        <h4>Pop-over transcript modal</h4>
+                        <p>Interrupted meeting flow in Round 1 testing. Users found themselves managing the window rather than listening. Abandoned after Round 1.</p>
+                    </div>
+                    <div class="cs-decision-card">
+                        <span class="cs-decision-badge db-chosen">Chosen</span>
+                        <h4>Opt-in per session</h4>
+                        <p>Activation is per-meeting, never persistent. A consent notification is surfaced automatically to all call participants — not just the activating user.</p>
+                    </div>
+                    <div class="cs-decision-card">
+                        <span class="cs-decision-badge db-chosen">Chosen</span>
+                        <h4>Inline translation callouts</h4>
+                        <p>Contextual translation notes for idioms and jargon appear inline rather than in a hidden tap-to-expand panel — increasing discoverability for multilingual users.</p>
+                    </div>
+                </div>
+
+                <!-- ─── WIREFRAMES ─────────────────────────────────────────── -->
+                <h3>Wireframes &amp; Prototyping</h3>
+                <p>Three rounds of lo-fi wireframing were followed by interactive prototyping in Figma and a functional build on a ThinkPad development unit. The three core screens are shown below.</p>
+
+                <div class="cs-mockup-grid">
+
+                    <!-- Mockup 1: Live transcript -->
+                    <div>
+                        <div class="cs-mockup-frame">
+                            <div class="cs-mockup-notch"></div>
+                            <div class="cs-mockup-screen">
+                                <div class="cm-status">9:41 AM &middot; Qira Active</div>
+                                <div class="cm-title">Pay Attention</div>
+                                <div class="cm-rec-pill">
+                                    <span class="cm-rec-dot"></span>
+                                    <span class="cm-rec-text">Recording &middot; 00:14:23</span>
+                                </div>
+                                <div class="cm-block">
+                                    <div class="cm-block-label">Alex Chen</div>
+                                    <div class="cm-line">So for Q2 I think we prioritize the onboarding flow first—</div>
+                                    <div class="cm-block-label" style="margin-top:6px">Maya R.</div>
+                                    <div class="cm-line hi">Agreed. Let's make that our primary goal for Q2. <span class="cm-tag">Decision</span></div>
+                                    <div class="cm-block-label" style="margin-top:6px">Alex Chen</div>
+                                    <div class="cm-line">David, can you own the analytics dashboard in Q3?</div>
+                                    <div class="cm-line hi">David K.: Yes — plan by Friday. <span class="cm-tag-blue">Action item</span></div>
+                                </div>
+                                <div class="cm-btn-row">
+                                    <button class="cm-btn primary">Summary</button>
+                                    <button class="cm-btn">Translate</button>
+                                    <button class="cm-btn">Stop</button>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="cm-caption">Live transcript with AI-flagged decisions and action items</p>
+                    </div>
+
+                    <!-- Mockup 2: Post-meeting summary -->
+                    <div>
+                        <div class="cs-mockup-frame">
+                            <div class="cs-mockup-notch"></div>
+                            <div class="cs-mockup-screen">
+                                <div class="cm-status">10:02 AM</div>
+                                <div class="cm-title">Meeting ended &middot; 23 min</div>
+                                <div class="cm-block">
+                                    <div class="cm-block-label">Decisions</div>
+                                    <div class="cm-line hi">Q2 priority: onboarding flow</div>
+                                    <div class="cm-line hi">Analytics dashboard moves to Q3</div>
+                                </div>
+                                <div class="cm-block">
+                                    <div class="cm-block-label">Action items</div>
+                                    <div class="cm-line">David K. &rarr; Analytics plan by Friday</div>
+                                    <div class="cm-line">Maya R. &rarr; Kick off onboarding sprint</div>
+                                </div>
+                                <div class="cm-block">
+                                    <div class="cm-block-label">AI Summary</div>
+                                    <div class="cm-line">Team aligned on Q2 roadmap. Onboarding leads, analytics follows in Q3. David owns planning by Friday.</div>
+                                </div>
+                                <div class="cm-btn-row">
+                                    <button class="cm-btn primary">Save to Notion</button>
+                                    <button class="cm-btn">Edit &amp; share</button>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="cm-caption">Post-meeting summary with Notion export</p>
+                    </div>
+
+                    <!-- Mockup 3: Translation mode -->
+                    <div>
+                        <div class="cs-mockup-frame">
+                            <div class="cs-mockup-notch"></div>
+                            <div class="cs-mockup-screen">
+                                <div class="cm-status">11:22 AM &middot; Translation ON</div>
+                                <div class="cm-title">Live Translation &middot; EN&rarr;JA</div>
+                                <div class="cm-rec-pill" style="background:#eef2fe;">
+                                    <span class="cm-rec-dot" style="background:#534AB7;"></span>
+                                    <span class="cm-rec-text" style="color:#534AB7;">Translating in real time</span>
+                                </div>
+                                <div class="cm-block">
+                                    <div class="cm-block-label">Original &middot; EN</div>
+                                    <div class="cm-line">"We need to finalize the architecture before the sprint starts — this is a blocker."</div>
+                                </div>
+                                <div class="cm-block" style="border-left:2px solid #534AB7;">
+                                    <div class="cm-block-label" style="color:#534AB7;">Translation &middot; 日本語</div>
+                                    <div class="cm-line hi" style="color:#3C3489;">「スプリント開始前にアーキテクチャを確定する必要があります。これはブロッカーです。」</div>
+                                </div>
+                                <div class="cm-block">
+                                    <div class="cm-block-label">Translation note</div>
+                                    <div class="cm-line">"Blocker" (技術的障害) — in Japanese dev context, refers to a dependency that prevents progress.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="cm-caption">Bilingual view with contextual translation notes for idioms</p>
+                    </div>
+
+                </div>
+
+                <div class="row half-bottom">
+                    <div class="col-six tab-full">
+                        <p><img src="images/case-study-wireframe-001-500w.png"
+                                srcset="images/case-study-wireframe-001-1000w.png 1000w, images/case-study-wireframe-001-500w.png 500w"
+                                sizes="(max-width: 500px) 100vw, 500px" alt="Wireframe iteration 1"></p>
+                    </div>
+                    <div class="col-six tab-full">
+                        <p><img src="images/case-study-wireframe-002-500w.png"
+                                srcset="images/case-study-wireframe-002-1000w.png 1000w, images/case-study-wireframe-002-500w.png 500w"
+                                sizes="(max-width: 500px) 100vw, 500px" alt="Wireframe iteration 2"></p>
+                    </div>
+                </div>
+
+                <div class="row half-bottom">
+                    <div class="col-six tab-full">
+                        <p><img src="images/case-study-wireframe-003-500w.png"
+                                srcset="images/case-study-wireframe-003-1000w.png 1000w, images/case-study-wireframe-003-500w.png 500w"
+                                sizes="(max-width: 500px) 100vw, 500px" alt="Wireframe iteration 3"></p>
+                    </div>
+                    <div class="col-six tab-full">
+                        <p><img src="images/case-study-wirefame-004-500w.png"
+                                srcset="images/case-study-wireframe-004-1000w.png 1000w, images/case-study-wireframe-004-500w.png 500w"
+                                sizes="(max-width: 500px) 100vw, 500px" alt="Wireframe iteration 4"></p>
+                    </div>
+                </div>
+
+                <!-- ─── USABILITY TESTING ──────────────────────────────────── -->
+                <h3>Usability Testing</h3>
+                <p>Two rounds of moderated usability testing were conducted: Round 1 used lo-fi Figma prototypes with 8 participants; Round 2 used a functional Qira build on a ThinkPad with 6 participants across the US, Germany, Japan, India, and Brazil. Each session included simulated meeting scenarios with a 20-minute recording task.</p>
+
+                <ul class="cs-findings">
+
+                    <li class="cs-finding-item">
+                        <div class="cs-finding-left">
+                            <span class="cs-severity sev-high">Critical</span>
+                            <div class="cs-finding-label">Consent notification unclear</div>
+                        </div>
+                        <p class="cs-finding-desc">5 of 8 users in Round 1 didn't know whether others in the call could see that recording was active. The fix: a system-level toast now notifies all meeting participants automatically — not just the activating user. Re-tested in Round 2: 78% rated privacy controls as "clear" or "very clear."</p>
+                    </li>
+
+                    <li class="cs-finding-item">
+                        <div class="cs-finding-left">
+                            <span class="cs-severity sev-mid">Medium</span>
+                            <div class="cs-finding-label">Action items vs. decisions confused</div>
+                        </div>
+                        <p class="cs-finding-desc">Users couldn't reliably distinguish between the two AI tag types in the live transcript. Solution: separated into distinct colors (red chip for decisions, blue chip for action items) and added the owning person's name directly on the action item chip. Confusion dropped significantly in Round 2.</p>
+                    </li>
+
+                    <li class="cs-finding-item">
+                        <div class="cs-finding-left">
+                            <span class="cs-severity sev-mid">Medium</span>
+                            <div class="cs-finding-label">Translation note feature undiscoverable</div>
+                        </div>
+                        <p class="cs-finding-desc">Multilingual users in Round 1 missed the contextual translation notes entirely — they were hidden behind a tap-to-expand interaction. Moved to a persistent inline callout for idiom-heavy terms, with a tap-to-dismiss for users who don't need it. All Round 2 multilingual participants noticed and used the feature.</p>
+                    </li>
+
+                    <li class="cs-finding-item">
+                        <div class="cs-finding-left">
+                            <span class="cs-severity sev-low">Positive</span>
+                            <div class="cs-finding-label">Summary accuracy praised</div>
+                        </div>
+                        <p class="cs-finding-desc">All 6 Round 2 participants rated the AI summary as "accurate" or "mostly accurate." A key driver: users trusted the output significantly more when they could see an inline supporting transcript excerpt linked directly to each summary point.</p>
+                    </li>
+
+                </ul>
+
+                <!-- ─── OUTCOMES ───────────────────────────────────────────── -->
+                <h3>Outcomes</h3>
+                <p>Pay Attention shipped as part of Lenovo Qira at CES 2026 on select Lenovo AI PCs, with a rollout to Motorola smartphones to follow. Post-launch metrics from early access users:</p>
+
+                <div class="cs-metrics">
+                    <div class="cs-metric">
+                        <span class="cs-metric-num">4.3</span>
+                        <span class="cs-metric-desc">out of 5 &middot; meeting recall satisfaction</span>
+                    </div>
+                    <div class="cs-metric">
+                        <span class="cs-metric-num">78%</span>
+                        <span class="cs-metric-desc">rated privacy controls "clear" or "very clear"</span>
+                    </div>
+                    <div class="cs-metric">
+                        <span class="cs-metric-num">2.1×</span>
+                        <span class="cs-metric-desc">faster recall vs. manual notes in user testing</span>
+                    </div>
+                    <div class="cs-metric">
+                        <span class="cs-metric-num">91%</span>
+                        <span class="cs-metric-desc">task success rate across core flows in Round 2</span>
+                    </div>
+                </div>
+
+                <!-- ─── CONCLUSION ─────────────────────────────────────────── -->
+                <h3>Conclusion</h3>
+                <p>As the lead UX designer on Pay Attention, I worked end-to-end — from research and persona development through prototyping, testing, and delivery into Qira's design system. I partnered with the product owner to prioritize features against business goals, embedded with the scrum team to guide daily implementation, and ran two rounds of testing to validate and iterate the design before ship.</p>
+
+                <div class="cs-reflection">
+                    <h3>What I'd do differently</h3>
+                    <p>The biggest lesson from this project was that privacy UX is inseparable from trust in the core feature. We initially treated consent as a legal checkbox — after one round of testing, it became the most critical design problem we had to solve. If I were starting again, I'd run a dedicated privacy mental models study in the first week of research, before any wireframing.</p>
+                    <p>I'm also proud of how the translation contextual notes evolved. What started as a secondary feature for bilingual users became one of the most praised moments in all of testing — a reminder that designing deeply for one persona often creates unexpected value for everyone.</p>
+                </div>
+
+            </div>
+        </div>      
+                
+
+                
+
+    </article>
+
+
+
+    
+
+
+    
+    
+    
+        <div id="preloader"> 
+            <div id="loader"></div>
+        </div>
+    
+    
+        <!-- Java Script
+        ================================================== -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/theme.js"></script>
+
+</body>
+
+</html>
