@@ -1,139 +1,1033 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Joseph — Developer Portfolio</title>
-<meta name="description" content="Portfolio of Joseph — software developer. Projects, skills, and contact." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="stylesheet" href="./styles.css" />
-</head>
-<body>
-<a class="skip-link" href="#main">Skip to content</a>
+<!doctype html>
+<!--[if lt IE 9]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en" data-theme="dark">
+    <!--<![endif]-->
 
-<header class="site-header">
-  <nav class="nav" aria-label="Main">
-    <a class="brand" href="#top">josep<span>.dev</span></a>
+    <head>
+        <!--- basic page needs
+    ================================================== -->
+        <meta charset="utf-8" />
+        <title>Joseph Leonard - UX Designer</title>
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <script>
+            (function () {
+                var theme = localStorage.getItem("theme");
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    theme === "light" ? "light" : "dark"
+                );
+            })();
+        </script>
 
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
-      <span></span><span></span><span></span>
-    </button>
+        <!-- mobile specific metas
+    ================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <ul class="nav-menu" id="nav-menu">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li>
-        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
-          <span class="theme-toggle-icon" aria-hidden="true"></span>
-        </button>
-      </li>
-    </ul>
-  </nav>
-</header>
+        <!-- CSS
+    ================================================== -->
+        <link rel="stylesheet" href="css/base.css" />
+        <link rel="stylesheet" href="css/vendor.css" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/modal-video.min.css" />
+        <link rel="stylesheet" href="css/site.css" />
 
-<main id="main">
-  <section class="hero" id="top">
-    <div class="wrap hero-inner">
-      <p class="eyebrow reveal">Hello, I'm</p>
-      <h1 class="reveal">Joseph</h1>
-      <p class="hero-tagline reveal">
-        Software developer building fast, accessible web apps —
-        and the occasional desktop tool.
-      </p>
-      <div class="hero-actions reveal">
-        <a class="btn btn-primary" href="#projects">View projects</a>
-        <a class="btn btn-ghost" href="#contact">Get in touch</a>
-      </div>
-      <ul class="hero-links reveal">
-        <li><a href="https://github.com/leonardjy0702" rel="me noopener" target="_blank">GitHub</a></li>
-        <li><a href="#contact">Email</a></li>
-      </ul>
-    </div>
-  </section>
+        <!-- script
+    ================================================== -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/modal-video.min.js"></script>
+        <script src="js/modernizr.js"></script>
+        <script src="js/pace.min.js"></script>
 
-  <section class="section" id="about">
-    <div class="wrap">
-      <h2 class="section-title reveal">About</h2>
-      <div class="about-grid">
-        <div class="reveal">
-          <p>
-            I build web interfaces end to end: design in the browser, keep the
-            bundle small, and make sure it works with a keyboard and a screen
-            reader. Recently I've been working across Kotlin/Compose desktop and
-            TypeScript front ends.
-          </p>
-          <p>
-            Outside of shipping features, I like reducing build times and
-            deleting code that no longer earns its keep.
-          </p>
+        <!-- favicons
+    ================================================== -->
+        <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest"> -->
+
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    </head>
+
+    <body id="top">
+        <!-- header
+    ================================================== -->
+        <header class="s-header">
+            <div class="header-logo">
+                <a class="site-logo" href="index.html">
+                    <img src="images/jyl-logo-2x.png" />
+                </a>
+            </div>
+
+            <nav class="header-nav-wrap">
+                <ul class="header-nav">
+                    <li class="current"><a class="smoothscroll" href="#home" title="Home">Home</a></li>
+                    <li><a class="smoothscroll" href="#about" title="About">About</a></li>
+                    <li><a class="smoothscroll" href="#case" title="Case Studies">Case Studies</a></li>
+                    <li><a class="smoothscroll" href="#works" title="Works">Works</a></li>
+                    <li><a class="smoothscroll" href="#contact" title="Contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <button
+                type="button"
+                class="theme-toggle"
+                id="theme-toggle"
+                aria-pressed="true"
+                aria-label="Switch to light mode"
+                title="Light mode">
+                <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8" />
+                    <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        d="M12 3v2.2M12 18.8V21M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M3 12h2.2M18.8 12H21M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6" />
+                </svg>
+                <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linejoin="round"
+                        d="M19.2 14.3A7.4 7.4 0 0 1 9.7 4.8 7.6 7.6 0 1 0 19.2 14.3z" />
+                </svg>
+            </button>
+
+            <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+        </header>
+        <!-- end s-header -->
+
+        <!-- home
+   ================================================== -->
+        <section
+            id="home"
+            class="s-home page-hero target-section"
+            data-parallax="scroll"
+            data-image-src="images/drawing.png"
+            type=""
+            data-natural-width="3000"
+            data-natural-height="2000"
+            data-position-y="center">
+            <video
+                id="bgvid"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                poster="images/drawing.png"
+                aria-hidden="true">
+                <source src="images/drawing.mp4" type="video/mp4" />
+                <source src="images/drawing.webm" type="video/webm" />
+                <source src="images/drawing.ogg" type="video/ogg" />
+            </video>
+
+            <!-- <section id="home" class="s-home page-hero target-section" data-parallax="scroll" data-image-src="images/drawing.png" type="" data-natural-width=3000 data-natural-height=2000 data-position-y=center> -->
+
+            <div class="overlay"></div>
+            <div class="shadow-overlay"></div>
+
+            <div class="home-content">
+                <div class="row home-content__main">
+                    <h3>Hello There</h3>
+
+                    <h1>
+                        My name is Joe. <br />
+                        I am a user experience <br />
+                        designer based in Atlanta.
+                    </h1>
+
+                    <div class="home-content__buttons">
+                        <a href="#works" class="smoothscroll btn btn--stroke"> Latest Projects </a>
+                        <a href="#about" class="smoothscroll btn btn--stroke"> More About Me </a>
+                    </div>
+
+                    <div class="home-content__scroll">
+                        <a href="#about" class="scroll-link smoothscroll">
+                            <span>Scroll Down</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- end home-content -->
+        </section>
+        <!-- end s-home -->
+
+        <!-- about
+    ================================================== -->
+        <section id="about" class="s-about target-section">
+            <div class="row narrow section-intro has-bottom-sep">
+                <div class="col-full text-center">
+                    <h3>About</h3>
+                    <h1>More About Me</h1>
+                    <p class="text-left">
+                        My path into UX began with an engineering education, giving me a strong foundation for
+                        understanding technical systems and collaborating with the people who build them. Throughout my
+                        career, I’ve worked at organizations including Lenovo, Dell Technologies, General Motors,
+                        Honeywell, and Northrop Grumman—designing products for environments where usability, accuracy,
+                        and trust are essential.
+                    </p>
+
+                    <p class="text-left">
+                        I specialize in simplifying complexity. Whether I’m designing an operational dashboard, an
+                        enterprise cloud platform, an administrative console, or an AI-enhanced workflow, I begin by
+                        understanding the people, decisions, and systems behind the interface. I use research, usability
+                        testing, prototyping, and measurable feedback to turn those insights into practical product
+                        improvements.
+                    </p>
+
+                    <p class="text-left">
+                        Today, my work increasingly focuses on AI-native experiences. I explore how prompts, intelligent
+                        automation, conversational interactions, and adaptive workflows can enhance human capability
+                        without diminishing transparency or control. I believe the best AI experiences should not simply
+                        feel innovative—they should be understandable, responsible, and genuinely useful.
+                    </p>
+
+                    <p class="text-left">
+                        I work closely with product managers, architects, engineers, domain experts, and customers
+                        throughout the design lifecycle. This collaboration allows me to balance user needs, business
+                        objectives, and technical realities while creating solutions that can scale across products and
+                        platforms.
+                    </p>
+
+                    <p class="text-left">
+                        Ultimately, I design for clarity: helping people navigate complexity, act on information, and
+                        feel confident using the technology in front of them.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row about-content about-content--buttons">
+                <!-- <div class="col-six tab-full left">
+                <button href="https://youtu.be" class="js-video-button btn btn--primary full-width" data-video-id="AFkExq3KnLE">View Highlight Reel</button>
+
+
+            </div>
+
+-->
+
+                <div class="tab-full text-center about-actions">
+                    <a
+                        href="Resume%20-%20Joseph%20Leonard.pdf"
+                        class="btn btn--primary btn--fit"
+                        target="_blank"
+                        rel="noopener"
+                        >Download My Resume</a
+                    >
+                    <a
+                        href="highlight-reel.html"
+                        class="btn btn--primary btn--fit"
+                        target="_blank"
+                        rel="noopener"
+                        >Highlight Reel</a
+                    >
+                </div>
+            </div>
+            <!-- end about-content buttons -->
+
+            <div class="row about-content about-content--timeline">
+                <div class="col-full text-center">
+                    <h3>My Work Experience</h3>
+                </div>
+
+                <div class="col-six tab-full left">
+                    <div class="timeline">
+                        <div class="timeline__block">
+                            <div class="timeline__bullet"></div>
+                            <div class="timeline__header">
+                                <p class="timeline__timeframe">September 2025 - Present</p>
+                                <h3>Lenovo</h3>
+                                <h5>Senior User Experience Designer</h5>
+                            </div>
+                            <div class="timeline__desc">
+                                <p>
+                                    Lead UX design for a multi-platform AI prompt application with AI-enhanced features,
+                                    collaborating with product managers and engineering teams to deliver innovative
+                                    AI-native experiences. Conduct comprehensive UX research and usability studies to
+                                    measure key metrics, informing iterative design improvements and feature
+                                    prioritization. Implement a scalable design system for a large-scale consumer
+                                    application across multiple platforms, ensuring consistency and efficiency. Partner
+                                    closely with product, management, and engineering teams to introduce new features
+                                    and enhancements based on user feedback and research-driven insights.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end timeline__block -->
+                        <div class="timeline__block">
+                            <div class="timeline__bullet"></div>
+                            <div class="timeline__header">
+                                <p class="timeline__timeframe">September 2024 - June 2025</p>
+                                <h3>SynapseMX</h3>
+                                <h5>Senior User Experience Designer</h5>
+                            </div>
+                            <div class="timeline__desc">
+                                <p>
+                                    Led UX design for an advanced maintenance management platform, working closely with
+                                    product leaders and developers to improve usability and overall functionality.
+                                    Conducted user research and synthesized insights into actionable design solutions,
+                                    creating wireframes, interactive prototypes, and high-fidelity UI designs. Built and
+                                    maintained a cohesive design system to ensure consistency across both web and mobile
+                                    applications. Partnered with engineers throughout the development process to
+                                    implement and refine interfaces, aligning user needs with technical constraints to
+                                    deliver a seamless user experience.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end timeline__block -->
+                        <div class="timeline__block">
+                            <div class="timeline__bullet"></div>
+                            <div class="timeline__header">
+                                <p class="timeline__timeframe">November 2021 - February 2024</p>
+                                <h3>Dell Technologies</h3>
+                                <h5>Principal Interactive/Visual Designer</h5>
+                            </div>
+                            <div class="timeline__desc">
+                                <p>
+                                    Worked with multiple projects in commercial/enterprise IT management applications.
+                                    Steered product design from concept to development using UX tools to distill complex
+                                    problems into intuitive, clean, user friendly designs. Created information
+                                    architectures, applied and grew existing design languages and systems, while
+                                    delivering the appropriate content to development partners (workflows, behavioral
+                                    specifications, redlines, interactive prototypes, etc.) Collaborated with other
+                                    designers to reconcile design/features/functionality to a cohesive UI environment.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end timeline__block -->
+                        <div class="timeline__block">
+                            <div class="timeline__bullet"></div>
+                            <div class="timeline__header">
+                                <p class="timeline__timeframe">November 2020 - October 2021</p>
+                                <h3>BrightDrop - General Motors</h3>
+                                <h5>User Experience Designer</h5>
+                            </div>
+                            <div class="timeline__desc">
+                                <p>
+                                    Work closely with developers and engineers to create an immersive and intuitive
+                                    experience for the end user. Work closely with product manager, software manager, to
+                                    create new interactions and user experiences that are based on user testing and
+                                    voice of customer data. Develop wireframes, prototypes to test and learn from
+                                    customers and stakeholders. Create, maintain, rich UI assets for engineering handoff
+                                    and development. Defined interaction flow and a/b testing to create a more intuitive
+                                    workflow for the end user. Worked closely with hardware group to support software
+                                    features, thereby extending the features for end users.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end timeline__block -->
+                    </div>
+                    <!-- end timeline -->
+                </div>
+                <!-- end left -->
+
+                <div class="col-six tab-full right">
+                    <div class="timeline">
+                        <div class="timeline__block">
+                            <div class="timeline__bullet"></div>
+                            <div class="timeline__header">
+                                <p class="timeline__timeframe">December 2019 - September 2020</p>
+                                <h3>TEK Systems - Consultant at Assurant</h3>
+                                <h5>Senior User Experience Designer</h5>
+                            </div>
+                            <div class="timeline__desc">
+                                <p>
+                                    Designed customer-facing enterprise applications that made interactions intuitive,
+                                    consistent, and accessible (WCAG), translating product requirements into interactive
+                                    solutions through research, journey maps, personas, wireframes, information
+                                    architecture, and style guides. Validated designs with usability testing, built
+                                    responsive prototypes, and supported front-end development in an agile environment
+                                    while balancing business goals, technical constraints, and a clear visual finish.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end timeline__block -->
+                        <div class="timeline__block">
+                            <div class="timeline__bullet"></div>
+                            <div class="timeline__header">
+                                <p class="timeline__timeframe">September 2016 - November 2019</p>
+                                <h3>Honeywell International</h3>
+                                <h5>Senior User Experience Designer</h5>
+                            </div>
+                            <div class="timeline__desc">
+                                <p>
+                                    Designed modern cloud-based UI, focused to bridge the gap between traditional Excel
+                                    based data entry into distributed/multi-tenant environments, and improving workflow
+                                    and efficiency for the end user. Work in a SAFe Scrum environment, where designers
+                                    are embedded in the scrum team to deliver design one sprint ahead as well as
+                                    contribute to the review process for completeness and quality. Managed expectations
+                                    and deliverables by working with key stakeholders, product owner, and developers to
+                                    adjust design for the needs of end users as well as expectations of deliverables
+                                    outlined by PO. Manage and guide front-end developers with strategy and detailed
+                                    specifications in program increment.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end timeline__block -->
+
+                        <div class="timeline__block">
+                            <div class="timeline__bullet"></div>
+                            <div class="timeline__header">
+                                <p class="timeline__timeframe">March 2014 - September 2016</p>
+                                <h3>K2 Firm, LLC. - Contractor for Northrop Grumman</h3>
+                                <h5>Senior User Experience Designer</h5>
+                            </div>
+                            <div class="timeline__desc">
+                                <p>
+                                    Development of advanced user interfaces for web and proprietary applications
+                                    utilized by the USAF. Abundant experience working on large, complex web sites
+                                    utilizing the latest technology and trends available for all device platforms.
+                                    Utilized expertise in user experience concepts to provide end users the best
+                                    experience possible, and future proofing website to adhere to government web
+                                    compliance standards.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end timeline__block -->
+
+                        <div class="timeline__block">
+                            <div class="timeline__bullet"></div>
+                            <div class="timeline__header">
+                                <p class="timeline__timeframe">July 2008 - March 2014</p>
+                                <h3>Mercer University</h3>
+                                <h5>Senior Web Designer</h5>
+                            </div>
+                            <div class="timeline__desc">
+                                <p>
+                                    Researched, designed, developed, and launched many websites including the IT
+                                    website, utilizing usability techniques to analyze audience needs and expectations.
+                                    Systematic updates and new content using responsive design, CSS 3, jQuery, and HTML
+                                    5. Periodic usability test conducted to determine best user experience on websites.
+                                    Heuristic evaluation of websites to design best design for front-end interface.
+                                    Collaborated with team members to institute a new content management system for the
+                                    university. Worked in a cross-functional team to re-design the University website.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- end timeline__block -->
+                    </div>
+                    <!-- end timeline -->
+                </div>
+                <!-- end right -->
+            </div>
+            <!-- end about-content timeline -->
+        </section>
+        <!-- end about -->
+
+        <!-- Case Studies
+    ================================================== -->
+        <section id="case" class="s-case target-section">
+            <div class="row narrow section-intro has-bottom-sep">
+                <div class="col-full">
+                    <h3>Case Studies</h3>
+                    <h1>Selected work, in depth</h1>
+                    <p class="lead">
+                        Longer stories of the problem, the process, and the outcome — from industrial cloud tools to
+                        real-time AI experiences.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row narrow case-list">
+                <div class="col-full case-item">
+                    <h3>Honeywell</h3>
+                    <h1>Asset Model Builder</h1>
+                    <p class="lead">
+                        UX design project that involved a complex problem of onboarding customers to a cloud based
+                        infrastructure and develop exploratory tools for analyzing data in realtime.
+                    </p>
+                    <div class="casestudy__buttons">
+                        <a href="casestudy-amb.html" class="btn btn--stroke">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="col-full case-item">
+                    <h3>Lenovo Qira</h3>
+                    <h1>Pay Attention</h1>
+                    <p class="lead">
+                        Real-time AI transcription and translation — a UX case study on helping people stay present in
+                        conversations without losing the details.
+                    </p>
+                    <div class="casestudy__buttons">
+                        <a href="casestudy-qira.html" class="btn btn--stroke">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="col-full case-item">
+                    <h3>Lenovo Qira</h3>
+                    <h1>Pay Attention, continued</h1>
+                    <p class="lead">
+                        A second pass at the Qira Pay Attention experience — interaction details, flows, and the
+                        product story in full.
+                    </p>
+                    <div class="casestudy__buttons">
+                        <a href="casestudy-qira-2.html" class="btn btn--stroke">View Case Study</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end case studies -->
+
+        <!-- works
+    ================================================== -->
+        <section id="works" class="s-works target-section">
+            <div class="row narrow section-intro has-bottom-sep">
+                <div class="col-full">
+                    <h3>Portfolio</h3>
+                    <h1>My Latest Projects</h1>
+                </div>
+            </div>
+
+            <div class="row masonry-wrap">
+                <div class="masonry">
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-dell-cma.html" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/dell-cma-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/dell-cma-thumb.png    1x,
+                                            images/portfolio/thumb/dell-cma-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Dell Client Managment Agent</h3>
+                                <p class="item-folio__cat">Windows Application</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-dell-cms.html" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/dell-cms-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/dell-cms-thumb.png    1x,
+                                            images/portfolio/thumb/dell-cms-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Dell Computer Management System</h3>
+                                <p class="item-folio__cat">SaaS Cloud Application</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-gm-brightdrop.html" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/bd-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/bd-thumb.png    1x,
+                                            images/portfolio/thumb/bd-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">GM BrightDrop Fleet Management</h3>
+                                <p class="item-folio__cat">Cloud Application</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-uxresearch.html" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/uxresearch-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/uxresearch-thumb.png    1x,
+                                            images/portfolio/thumb/uxresearch-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Honeywell Observational Voice of Customer</h3>
+                                <p class="item-folio__cat">User Research</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-bbyc.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/bbyc-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/bbyc-thumb.png    1x,
+                                            images/portfolio/thumb/bbyc-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Assurant Best Buy Self Service Portal</h3>
+                                <p class="item-folio__cat">User Experience Design</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-pocketgeek.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/pocketgeek-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/pocketgeek-thumb.png    1x,
+                                            images/portfolio/thumb/pocketgeek-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Assurant PocketGeek Home Self Service Portal</h3>
+                                <p class="item-folio__cat">User Experience Design</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-spog.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/spog-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/spog-thumb.png    1x,
+                                            images/portfolio/thumb/spog-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Honeywell Single Pane of Glass Dashboard</h3>
+                                <p class="item-folio__cat">User Experience Design</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-amb.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/amb-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/amb-thumb.png    1x,
+                                            images/portfolio/thumb/amb-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Honeywell Asset Model Builder</h3>
+                                <p class="item-folio__cat">User Experience Design, User Research</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-dashboard.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/dashboard-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/dashboard-thumb.png    1x,
+                                            images/portfolio/thumb/dashboard-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Honeywell UOP Dashboard</h3>
+                                <p class="item-folio__cat">User Experience Design</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-kpi.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/kpi-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/kpi-thumb.png    1x,
+                                            images/portfolio/thumb/kpi-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Honeywell Uniformance KPI</h3>
+                                <p class="item-folio__cat">User Experience Design</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-champ.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/champ-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/champ-thumb.png    1x,
+                                            images/portfolio/thumb/champ-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Honeywell CHAMP</h3>
+                                <p class="item-folio__cat">User Experience Design, User Research</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-assetbrowser.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/assetbrowser-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/assetbrowser-thumb.png    1x,
+                                            images/portfolio/thumb/assetbrowser-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Honeywell Asset Browser (POC)</h3>
+                                <p class="item-folio__cat">User Experience Design</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-pdss-search.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/pdss-search-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/pdss-search-thumb.png    1x,
+                                            images/portfolio/thumb/pdss-search-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">USAF PDM Search</h3>
+                                <p class="item-folio__cat">User Experience Design</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-gateway.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/gateway-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/gateway-thumb.png    1x,
+                                            images/portfolio/thumb/gateway-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">USAF PDSS Gateway Homepage</h3>
+                                <p class="item-folio__cat">User Experience Design</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-goh.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/goh-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/goh-thumb.png    1x,
+                                            images/portfolio/thumb/goh-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Grand Opera House</h3>
+                                <p class="item-folio__cat">User Experience Design</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-mmedicine.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/mmedicine-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/mmedicine-thumb.png    1x,
+                                            images/portfolio/thumb/mmedicine-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Mercer Medicine</h3>
+                                <p class="item-folio__cat">User Experience Design</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-myp.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/myp-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/myp-thumb.png    1x,
+                                            images/portfolio/thumb/myp-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Mercer Youth Programs</h3>
+                                <p class="item-folio__cat">User Experience Design</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-integration.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/integration-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/integration-thumb.png    1x,
+                                            images/portfolio/thumb/integration-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Mercer University - 50th Anniversary of Integration</h3>
+                                <p class="item-folio__cat">User Experience Design</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-mit.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/mit-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/mit-thumb.png    1x,
+                                            images/portfolio/thumb/mit-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Mercer University - Information Technology</h3>
+                                <p class="item-folio__cat">User Experience Design</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-iriver.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/iriver-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/iriver-thumb.png    1x,
+                                            images/portfolio/thumb/iriver-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">Iriver Clix - Consumer Electronics</h3>
+                                <p class="item-folio__cat">User Experience Design, User Research</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+
+                    <div class="masonry__brick">
+                        <div class="item-folio">
+                            <div class="item-folio__thumb">
+                                <a href="portfolio-aws.html" class="thumb-link" data-size="1050x700">
+                                    <img
+                                        src="images/portfolio/thumb/aws-thumb.png"
+                                        srcset="
+                                            images/portfolio/thumb/aws-thumb.png    1x,
+                                            images/portfolio/thumb/aws-thumb@2x.png 2x
+                                        "
+                                        alt="" />
+                                    <span class="shadow-overlay"></span>
+                                </a>
+                            </div>
+
+                            <div class="item-folio__text">
+                                <h3 class="item-folio__title">AWS Site Usability Observations</h3>
+                                <p class="item-folio__cat">User Experience Design</p>
+                            </div>
+                        </div>
+                        <!-- end item-folio -->
+                    </div>
+                    <!-- end masonry__brick -->
+                </div>
+                <!-- end masonry -->
+            </div>
+            <!-- end masonry wrap -->
+        </section>
+        <!-- end works -->
+
+        <!-- Contact Section
+    ================================================== -->
+        <section id="contact" class="s-contact target-section">
+            <div class="overlay"></div>
+
+            <div class="row narrow section-intro">
+                <div class="col-full">
+                    <h3>Contact</h3>
+                    <h1>Say Hello</h1>
+
+                    <p class="lead">If you have any unanswered questions, please feel free contact me.</p>
+                    <h4>Phone</h4>
+                    <p class="lead">Mobile: <a href="tel:478-919-3416">(+1) 404-436-5090</a></p>
+                    <h4>Email</h4>
+                    <p class="lead"><a href="mailto:joseph.leonard@outlook.com">joseph.leonard@outlook.com</a></p>
+                </div>
+            </div>
+        </section>
+        <!-- end s-contact -->
+
+        <div class="go-top">
+            <a class="smoothscroll" title="Back to Top" href="#top"
+                ><i class="im im-arrow-up" aria-hidden="true"></i
+            ></a>
         </div>
-        <dl class="facts reveal">
-          <div><dt>Focus</dt><dd>Front end &amp; developer tooling</dd></div>
-          <div><dt>Stack</dt><dd>TypeScript, Kotlin, Node</dd></div>
-          <div><dt>Location</dt><dd>Remote</dd></div>
-          <div><dt>Status</dt><dd>Open to opportunities</dd></div>
-        </dl>
-      </div>
-    </div>
-  </section>
 
-  <section class="section section-alt" id="projects">
-    <div class="wrap">
-      <h2 class="section-title reveal">Projects</h2>
-      <p class="section-lead reveal">
-        Pulled live from my public GitHub repositories.
-      </p>
+        <div id="preloader">
+            <div id="loader"></div>
+        </div>
 
-      <div class="projects" id="projects-grid" aria-busy="true">
-        <p class="projects-status" id="projects-status">Loading repositories…</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="skills">
-    <div class="wrap">
-      <h2 class="section-title reveal">Skills</h2>
-      <ul class="skills reveal">
-        <li>TypeScript</li>
-        <li>JavaScript</li>
-        <li>Kotlin</li>
-        <li>React</li>
-        <li>Node.js</li>
-        <li>HTML &amp; CSS</li>
-        <li>Compose Multiplatform</li>
-        <li>Git</li>
-        <li>Gradle</li>
-        <li>Accessibility</li>
-        <li>Testing</li>
-        <li>CI/CD</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section section-alt" id="contact">
-    <div class="wrap contact">
-      <h2 class="section-title reveal">Contact</h2>
-      <p class="reveal">
-        The fastest way to reach me is email. I read everything and reply to
-        most things.
-      </p>
-      <p class="contact-actions reveal">
-        <a class="btn btn-primary" href="mailto:you@example.com">you@example.com</a>
-        <a class="btn btn-ghost" href="https://github.com/leonardjy0702" rel="noopener" target="_blank">github.com/leonardjy0702</a>
-      </p>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <p>&copy; <span id="year"></span> Joseph. Built by hand, no framework.</p>
-    <a href="#top">Back to top</a>
-  </div>
-</footer>
-
-<script src="./main.js" type="module"></script>
-</body>
+        <!-- Java Script
+    ================================================== -->
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/theme.js"></script>
+    </body>
 </html>

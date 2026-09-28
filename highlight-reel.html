@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="utf-8" />
+    <title>Highlight Reel — Joseph Leonard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme");
+            document.documentElement.setAttribute("data-theme", theme === "light" ? "light" : "dark");
+        })();
+    </script>
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/vendor.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body class="reel-page">
+    <header class="reel-topbar">
+        <a class="reel-back" href="index.html#about">← Back to site</a>
+        <h1>Highlight Reel</h1>
+        <button
+            type="button"
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-pressed="true"
+            aria-label="Switch to light mode"
+            title="Light mode">
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8" />
+                <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    d="M12 3v2.2M12 18.8V21M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M3 12h2.2M18.8 12H21M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6" />
+            </svg>
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"
+                    d="M19.2 14.3A7.4 7.4 0 0 1 9.7 4.8 7.6 7.6 0 1 0 19.2 14.3z" />
+            </svg>
+        </button>
+    </header>
+
+    <main class="reel-shell">
+        <div class="reel-player" id="reel-player">
+            <video id="reel-video" playsinline preload="metadata">
+                <source src="images/jyl-highlight-reel.mp4" type="video/mp4" />
+                Your browser does not support this video.
+            </video>
+
+            <div class="reel-controls">
+                <input
+                    id="reel-seek"
+                    class="reel-seek"
+                    type="range"
+                    min="0"
+                    max="0"
+                    value="0"
+                    step="0.1"
+                    aria-label="Seek" />
+
+                <div class="reel-controls__row">
+                    <div class="reel-controls__group">
+                        <button type="button" id="reel-back" class="reel-btn" title="Back 10 seconds (J)">
+                            −10s
+                        </button>
+                        <button type="button" id="reel-play" class="reel-btn reel-btn--play" title="Play / Pause (K)">
+                            Play
+                        </button>
+                        <button type="button" id="reel-fwd" class="reel-btn" title="Forward 10 seconds (L)">
+                            +10s
+                        </button>
+                    </div>
+
+                    <p class="reel-time" id="reel-time">0:00 / 0:00</p>
+
+                    <div class="reel-controls__group">
+                        <button type="button" id="reel-mute" class="reel-btn" title="Mute">Mute</button>
+                        <button type="button" id="reel-full" class="reel-btn" title="Fullscreen">Full</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="reel-hint">Shortcuts: J back 10s · K play/pause · L forward 10s · F fullscreen · M mute</p>
+    </main>
+
+    <script src="js/highlight-reel.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+</html>

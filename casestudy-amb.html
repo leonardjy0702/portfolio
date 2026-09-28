@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en" data-theme="dark">
+<!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Portfolio - Asset Model Builder</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script>
+        (function () {
+            var theme = localStorage.getItem("theme");
+            document.documentElement.setAttribute(
+                "data-theme",
+                theme === "light" ? "light" : "dark"
+            );
+        })();
+    </script>
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/site.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+
+<body id="top">
+
+    <!-- header
+    ================================================== -->
+    <header class="s-header">
+            
+        <div class="header-logo">
+            <a class="site-logo" href="index.html"><img src="images/jyl-logo-2x.png" alt="Homepage"></a>
+        </div>
+
+        <nav class="header-nav-wrap">
+            <ul class="header-nav">
+                <li><a href="index.html#home" title="Home">Home</a></li>
+                <li><a href="index.html#about" title="About">About</a></li>
+                <li class="current"><a href="index.html#case" title="Case Studies">Case Studies</a></li>
+                <li><a href="index.html#works" title="Works">Works</a></li>
+                <li><a href="index.html#contact" title="Contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <button
+            type="button"
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-pressed="true"
+            aria-label="Switch to light mode"
+            title="Light mode">
+            <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8" />
+                <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    d="M12 3v2.2M12 18.8V21M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M3 12h2.2M18.8 12H21M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6" />
+            </svg>
+            <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                    d="M19.2 14.3A7.4 7.4 0 0 1 9.7 4.8 7.6 7.6 0 1 0 19.2 14.3z" />
+            </svg>
+        </button>
+
+        <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+
+    </header> <!-- end s-header -->
+
+
+    <article class="blog-single">
+
+        <!-- page header/blog hero
+        ================================================== -->
+        <div class="page-header page-header--single page-hero" style="background-image:url(images/casestudy-bg.jpg)">
+        
+            <div class="row page-header__content narrow">
+                <article class="col-full">
+                    <!-- <div class="page-header__info">
+                        <div class="page-header__cat">
+                            <a href="#0">Branding</a><a href="#0">Design</a>
+                        </div>
+                    </div> -->
+                    <h1 class="page-header__title">
+                        <a href="#0" title="">
+                            Case Study<br>Honeywell - Asset Model Builder
+                        </a>
+                    </h1>
+                    
+                    
+                </article>
+            </div>
+    
+        </div> <!-- end page-header -->
+
+        <div class="row blog-content">
+            <div class="col-full blog-content__main">
+<h3>Introduction</h3>
+                <p class="lead">Honeywell Asset Model Builder is a cloud native application that lets users see realtime data from plants and factories, to gain insights and what-if analysis to help aid a more profitable management of plant assets.</p>
+                <h3>Company</h3>
+                <p>Honeywell International - (Universal Oil Products)UOP</p>
+                <h3>Project Date</h3>
+                <p>May 2017 - March 2019</p>
+                <h3>Role</h3>
+                <p>Lead UX Designer</p>
+                <h3>Project Summary</h3>
+                <p>CPS (Connected Performance Services) is an application that interfaces with a simulation application called Unisim. The current system's data is isolated to individuals and is very difficult to manage the data and collaborate. Current architecture prohibits real time data, and opts to use bulk upload of relevant data. The interface for the application was mainly in Excel. Onboarding of customer data took over 26 weeks because most of the data had to be adjusted manually for input. The main benefit for end users was a knowledge base of chemial refinement, but was not maintained for the user to drill down. </p>
+                <h3>The Challenge</h3>
+                <p>Several workshops were conducted to get to the bottom of what work needed to be completed, to enhance the user experience. We determined that the users are internal process engineers that needed to onboard customer data into the application as quickly as possible. Secondarily, the process engineer needed to validate his findings by querying the data in real time, to match the data that is coming form the plant. The major problems we needed to solve was discussed:</p>
+                <ul>
+                <li>How do we reduce the time to onboard the customers, from 26 weeks to 2 weeks</li>
+                    <li>How can we give access to corrected, accurate data, so that users can work from the same data</li>
+                    <li>How can we let multiple users collaborate around the world</li>
+                    <li>How can we leverage years of tribal knowledge from UOP, and help users of the application be more productive</li>
+                    <li>What additional tools can we provide process engineers, to aid them</li>
+                </ul>
+                
+                
+
+                <div class="row half-bottom">
+                    <div class="col-six tab-full">
+                <p>
+                <img src="images/case-study-workshop-004-500w.jpg" srcset="images/case-study-workshop-004-1000w.jpg 1000w, 
+                    images/case-study-workshop-004-500w.jpg 500w" sizes="(max-width: 500px) 100vw, 500px" alt=""></p></div>
+                <div class="col-six tab-full">
+                    <p><img src="images/case-study-workshop-003-500w.jpg" srcset="images/case-study-workshop-003-1000w.jpg 1000w, 
+                    images/case-study-workshop-003-500w.jpg 500w" sizes="(max-width: 500px) 100vw, 500px" alt=""></p></div>
+                </div>
+                <h3>The Solution</h3>
+                <p>As a UX designer assigned to this project, I worked with the product owner, development lead, and users to determine the key pain points to solve, and prioritize the stories to be worked on. The features that were to be solved were discussed and prioritized below:</p>
+                <ul>
+                <li>create an automated method to ingest data in the backend and manipulate the data for consumption</li>
+                    <li>Create a cloud based architecture so that multiple users will use the data, collaborate with the results at the same time</li>
+                    <li>Improve the current workflow for the process engineers, from an excel based data entry to a cloud based automated work environment</li>
+                    <li>Create builder tools, so that onboarding tasks by process engineers can be automated</li>
+                    <li>Make the knowledge base more robust and editable by key personnel so that detailed chemical process knowledge is available to everyone</li>
+                    
+                </ul>
+                <div class="row half-bottom">
+                    <div class="col-six tab-full">
+                <p>
+                <img src="images/case-study-ideation-001-500w.jpg" srcset="images/case-study-ideation-001-1000w.jpg 1000w, 
+                    images/case-study-ideation-001-500w.jpg 500w" sizes="(max-width: 500px) 100vw, 500px" alt=""></p></div>
+                <div class="col-six tab-full">
+                    <p><img src="images/case-study-ideation-002-500w.jpg" srcset="images/case-study-ideation-002-1000w.jpg 1000w, 
+                    images/case-study-ideation-002-500w.jpg 500w" sizes="(max-width: 500px) 100vw, 500px" alt=""></p></div>
+                </div>
+                <p>The biggest problem we had to solve is how to make a 26 week onboarding process into a 2 week process. After further investigation, on current workflow, process engineers had to search, catalog, and input tags that correspond from the plant into a proprietary tag in Excel sheets. This was an arduous task, which could take a long time. Furthermore, when a raw data comes in from the plant, the data needs to be normalized, calculated, and assessed to see if it can be part of the viable data set. We concluded that this task needs to be automated, so that the process engineers do not have to spend time on this part of the workflow. So the result of onboarding time was reduced by 16 weeks, because of this automation of data.</p>
+                <div class="row half-bottom">
+                    <div class="col-twelve tab-full">
+                <p>
+                <img src="images/case-study-workflow-500w.png" srcset="images/case-study-workflow-1000w.png 1000w, 
+                    images/case-study-workflow-500w.png 500w" sizes="(max-width: 1000px) 100vw, 1000px" alt=""></p></div>
+               
+                </div>
+                <p>We also found out that a single process engineer would work on a single project from start to finish. The reason was that the data was sitting on the computer that they were assigned to and not shared with others, who could help with the tasks. We agreed that the data needs to be on the cloud, so that multiple process engineers could work on the same project at one time. What took 1 process engineer 4-6 weeks to validate the data, was reduced to 1-2 weeks, because we had multiple process engineers tackling the project together. </p>
+                <p>To further aid in validation of uploaded data, we created builder tools to search the massive database of tags that has been uploaded to the cloud. The following tools were created in order to aid process engineers:</p>
+                <ul>
+                <li>Tag query</li>
+                    <li>Tag drilldown/exploration</li>
+                    <li>Tag hierachy(tag lineage)</li>
+                    <li>Realtime data view(TSDB search)</li>
+                    <li>Bulk edit of tags</li>
+                </ul>
+            <div class="row half-bottom">
+                    <div class="col-six tab-full">
+                <p>
+                <img src="images/case-study-wireframe-001-500w.png" srcset="images/case-study-wireframe-001-1000w.png 1000w, 
+                    images/case-study-wireframe-001-500w.png 500w" sizes="(max-width: 500px) 100vw, 500px" alt=""></p></div>
+                <div class="col-six tab-full">
+                    <p><img src="images/case-study-wireframe-002-500w.png" srcset="images/case-study-wireframe-002-1000w.png 1000w, 
+                    images/case-study-wireframe-002-500w.png 500w" sizes="(max-width: 500px) 100vw, 500px" alt=""></p></div>
+                </div>
+                
+                <div class="row half-bottom">
+                <div class="col-six tab-full">
+                <p>
+                <img src="images/case-study-wireframe-003-500w.png" srcset="images/case-study-wireframe-003-1000w.png 1000w, 
+                    images/case-study-wireframe-003-500w.png 500w" sizes="(max-width: 500px) 100vw, 500px" alt=""></p></div>
+                <div class="col-six tab-full">
+                    <p><img src="images/case-study-wirefame-004-500w.png" srcset="images/case-study-wireframe-004-1000w.png 1000w, 
+                    images/case-study-wireframe-004-500w.png 500w" sizes="(max-width: 500px) 100vw, 500px" alt=""></p></div>
+                
+                
+                
+                </div>
+                
+                
+                
+                <p>We also determined that the knowledge of chemical process was important to package and include in aiding end users, using our application. We interviewed many chemical engineers and presented them with real scenarios, so that we could include their knowledge in troubleshooting scenarios. The knowledge base is now used to drill down on KPI that are presented on the dashboard application.</p>
+                <div class="row half-bottom">
+                    <div class="col-six tab-full">
+                <p>
+                <img src="images/portfolio/cps-builders/Advanced Search - Column Selection-500w.png" srcset="images/portfolio/cps-builders/Advanced Search - Column Selection-1000w.png 1000w, 
+                    images/portfolio/cps-builders/Advanced Search - Column Selection-500w.png 500w" sizes="(max-width: 500px) 100vw, 500px" alt=""></p></div>
+                <div class="col-six tab-full">
+                    <p><img src="images/portfolio/cps-builders/new template/Navigational Hierarchy Popup-500w.png" srcset="images/portfolio/cps-builders/new template/Navigational Hierarchy Popup-1000w.png 1000w, 
+                    images/portfolio/cps-builders/new template/Navigational Hierarchy Popup-500w.png 500w" sizes="(max-width: 500px) 100vw, 500px" alt=""></p></div>
+                </div>
+                
+                <div class="row half-bottom">
+                <div class="col-six tab-full">
+                <p>
+                <img src="images/portfolio/cps-builders/Tag Lineage-500w.png" srcset="images/portfolio/cps-builders/Tag Lineage-1000w.png 1000w, 
+                    images/portfolio/cps-builders/Tag Lineage-500w.png 500w" sizes="(max-width: 500px) 100vw, 500px" alt=""></p></div>
+                <div class="col-six tab-full">
+                    <p><img src="images/portfolio/cps-builders/TSDB File Manager-500w.png" srcset="images/portfolio/cps-builders/TSDB File Manager-1000w.png 1000w, 
+                    images/portfolio/cps-builders/TSDB File Manager-500w.png 500w" sizes="(max-width: 500px) 100vw, 500px" alt=""></p></div>
+                
+                
+                
+                </div>
+                <h3>Conclusion</h3>
+                <p>As a UX designer assigned to the CPS project, I partipated by working together with the product owner, to generate and prioritize business goals, and features that will advance the application for easier use. I aided the developers by being a member of the scrum team and help them on a daily basis to bring design into developmental completion. We tested and validated our designs and applications with process engineers, so that we can put that knowledge back into our product.</p>
+
+          </div>
+          </div>      
+
+                
+
+                
+
+    </article>
+
+
+
+    
+
+
+    
+    
+    
+        <div id="preloader"> 
+            <div id="loader"></div>
+        </div>
+    
+    
+        <!-- Java Script
+        ================================================== -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/theme.js"></script>
+
+</body>
+
+</html>
