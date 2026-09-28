@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Joseph — Developer Portfolio</title>
+<meta name="description" content="Portfolio of Joseph — software developer. Projects, skills, and contact." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="nav" aria-label="Main">
+    <a class="brand" href="#top">josep<span>.dev</span></a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li>
+        <button class="theme-toggle" type="button" aria-label="Toggle color theme">
+          <span class="theme-toggle-icon" aria-hidden="true"></span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="wrap hero-inner">
+      <p class="eyebrow reveal">Hello, I'm</p>
+      <h1 class="reveal">Joseph</h1>
+      <p class="hero-tagline reveal">
+        Software developer building fast, accessible web apps —
+        and the occasional desktop tool.
+      </p>
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="#projects">View projects</a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+      <ul class="hero-links reveal">
+        <li><a href="https://github.com/leonardjy0702" rel="me noopener" target="_blank">GitHub</a></li>
+        <li><a href="#contact">Email</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <h2 class="section-title reveal">About</h2>
+      <div class="about-grid">
+        <div class="reveal">
+          <p>
+            I build web interfaces end to end: design in the browser, keep the
+            bundle small, and make sure it works with a keyboard and a screen
+            reader. Recently I've been working across Kotlin/Compose desktop and
+            TypeScript front ends.
+          </p>
+          <p>
+            Outside of shipping features, I like reducing build times and
+            deleting code that no longer earns its keep.
+          </p>
+        </div>
+        <dl class="facts reveal">
+          <div><dt>Focus</dt><dd>Front end &amp; developer tooling</dd></div>
+          <div><dt>Stack</dt><dd>TypeScript, Kotlin, Node</dd></div>
+          <div><dt>Location</dt><dd>Remote</dd></div>
+          <div><dt>Status</dt><dd>Open to opportunities</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="projects">
+    <div class="wrap">
+      <h2 class="section-title reveal">Projects</h2>
+      <p class="section-lead reveal">
+        Pulled live from my public GitHub repositories.
+      </p>
+
+      <div class="projects" id="projects-grid" aria-busy="true">
+        <p class="projects-status" id="projects-status">Loading repositories…</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="wrap">
+      <h2 class="section-title reveal">Skills</h2>
+      <ul class="skills reveal">
+        <li>TypeScript</li>
+        <li>JavaScript</li>
+        <li>Kotlin</li>
+        <li>React</li>
+        <li>Node.js</li>
+        <li>HTML &amp; CSS</li>
+        <li>Compose Multiplatform</li>
+        <li>Git</li>
+        <li>Gradle</li>
+        <li>Accessibility</li>
+        <li>Testing</li>
+        <li>CI/CD</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="contact">
+    <div class="wrap contact">
+      <h2 class="section-title reveal">Contact</h2>
+      <p class="reveal">
+        The fastest way to reach me is email. I read everything and reply to
+        most things.
+      </p>
+      <p class="contact-actions reveal">
+        <a class="btn btn-primary" href="mailto:you@example.com">you@example.com</a>
+        <a class="btn btn-ghost" href="https://github.com/leonardjy0702" rel="noopener" target="_blank">github.com/leonardjy0702</a>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>&copy; <span id="year"></span> Joseph. Built by hand, no framework.</p>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script src="./main.js" type="module"></script>
+</body>
+</html>
